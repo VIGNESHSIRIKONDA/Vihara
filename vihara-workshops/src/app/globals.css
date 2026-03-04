@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --brand-gold: #C6A75E;
+  --brand-black: #000000;
+  --brand-white: #FFFFFF;
+}
+
+@theme inline {
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-black: var(--brand-black);
+  --color-brand-white: var(--brand-white);
+  --font-serif: var(--font-playfair-display);
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background: var(--brand-white);
+  color: var(--brand-black);
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tiltFloat {
+  0%,
+  100% {
+    transform: rotate3d(1, 1, 0, 0deg) translateY(0px);
+  }
+  50% {
+    transform: rotate3d(1, 1, 0, 8deg) translateY(-10px);
+  }
+}
+
+@keyframes photoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.hero-tilt {
+  transform-style: preserve-3d;
+  animation: tiltFloat 7s ease-in-out infinite;
+}
+
+.photo-pop {
+  animation: photoPulse 7s ease-in-out infinite;
+}
+
+.reveal-up {
+  opacity: 0;
+  animation: revealUp 0.8s ease forwards;
+}
+
+.reveal-delay-1 {
+  animation-delay: 120ms;
+}
+
+.reveal-delay-2 {
+  animation-delay: 240ms;
+}
+
+.reveal-delay-3 {
+  animation-delay: 360ms;
+}
