@@ -86,6 +86,28 @@ html {
   }
 }
 
+@keyframes spotlightFloat {
+  0%,
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+  }
+}
+
+@keyframes goldSweep {
+  0% {
+    box-shadow: 0 0 0 rgba(198, 167, 94, 0);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(198, 167, 94, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(198, 167, 94, 0);
+  }
+}
+
 .hero-tilt {
   transform-style: preserve-3d;
   animation: tiltFloat 7s ease-in-out infinite;
@@ -110,4 +132,13 @@ html {
 
 .reveal-delay-3 {
   animation-delay: 360ms;
+}
+
+.weekend-spotlight {
+  animation: spotlightFloat 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.gold-shine {
+  animation: goldSweep 2.2s ease-in-out infinite;
 }

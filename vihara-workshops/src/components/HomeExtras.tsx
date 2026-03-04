@@ -1,21 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import CustomExperiences from "@/components/CustomExperiences";
-
-const WEEKEND_PRICING = [
-  { title: "🎨 Resin Art", price: "₹999", image: "https://images.unsplash.com/photo-1578301978069-1c3adf265f47?q=80&w=1740&auto=format&fit=crop" },
-  { title: "🏺 Hand-Build Pottery", price: "₹899", image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1887&auto=format&fit=crop" },
-  { title: "👤 Clay Portrait Sculpture", price: "₹899", image: "https://images.unsplash.com/photo-1582041148887-67274b989593?q=80&w=1770&auto=format&fit=crop" },
-  { title: "🔵 Mandala Art", price: "₹799", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1887&auto=format&fit=crop" },
-  { title: "🎨 Acrylic Painting", price: "₹799", image: "https://images.unsplash.com/photo-1501472312651-726afe119ff1?q=80&w=1887&auto=format&fit=crop" },
-  { title: "🎨 Gouache Painting", price: "₹799", image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1780&auto=format&fit=crop" },
-  { title: "🎨 Pichwai Painting", price: "₹799", image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?q=80&w=1887&auto=format&fit=crop" },
-  { title: "🌊 Water Colour Painting", price: "₹699", image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1945&auto=format&fit=crop" },
-  { title: "☕ Coffee Painting", price: "₹699", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1770&auto=format&fit=crop" },
-  { title: "✏ Charcoal Sketch", price: "₹699", image: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1932&auto=format&fit=crop" },
-  { title: "🧿 Key Chain Making", price: "₹699", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1935&auto=format&fit=crop" },
-  { title: "🧲 Fridge Magnet Making", price: "₹699", image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1887&auto=format&fit=crop" },
-];
+import WeekendWorkshopsShowcase from "@/components/WeekendWorkshopsShowcase";
 
 const FAQS = [
   {
@@ -100,35 +85,7 @@ export default function HomeExtras() {
             <p className="text-gray-600 mt-3">Black cards with gold borders.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {WEEKEND_PRICING.map((item, index) => (
-              <article
-                key={item.title}
-                className="group rounded-xl border border-brand-gold bg-brand-black text-white overflow-hidden shadow-sm reveal-up hover:shadow-[0_18px_40px_rgba(198,167,94,0.32)] transition-all duration-500 hover:[transform:perspective(900px)_rotateX(5deg)_rotateY(-4deg)_translateY(-8px)]"
-                style={{ animationDelay: `${index * 70}ms` }}
-              >
-                <div className="relative h-44 w-full overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-                  <span className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold bg-brand-gold text-brand-black animate-pulse">
-                    Activity
-                  </span>
-                </div>
-                <div className="p-5">
-                  <p className="text-lg leading-snug">{item.title}</p>
-                  <div className="mt-3 pt-3 border-t border-brand-gold/30 flex items-center justify-between">
-                    <p className="text-brand-gold text-2xl font-bold">{item.price}</p>
-                    <span className="text-xs uppercase tracking-[0.2em] text-brand-gold/80">Weekend</span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <WeekendWorkshopsShowcase />
 
           <div className="text-center mt-8 space-y-2">
             <p className="text-brand-gold font-semibold">🔥 Early bird discount for first 5 bookings</p>
