@@ -15,8 +15,19 @@ export default function FeaturedWorkshops() {
           </p>
         </div>
 
-        <div id="upcoming-event" className="mb-10 rounded-2xl border border-brand-gold/40 bg-black/70 text-brand-white p-6 md:p-8 shadow-[0_0_30px_rgba(198,167,94,0.15)]">
-          <p className="text-brand-gold uppercase tracking-[0.2em] text-xs mb-2">Upcoming Event</p>
+        <p className="text-brand-gold uppercase tracking-[0.2em] text-xs mb-3 text-center">Upcoming Event</p>
+        <div id="upcoming-event" className="mb-10 rounded-2xl border border-brand-gold/40 bg-black/70 text-brand-white p-4 md:p-5 shadow-[0_0_30px_rgba(198,167,94,0.15)]">
+          <div className="relative h-44 md:h-56 w-full rounded-xl overflow-hidden mb-5">
+            <Image
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop"
+              alt="Upcoming Vihara workshop in a cozy cafe"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+          </div>
+
+          <div className="px-2 md:px-3 pb-2">
           <h3 className="font-serif text-2xl md:text-3xl mb-2">{UPCOMING_EVENT.title}</h3>
           <p className="text-white/80 mb-4">
             {UPCOMING_EVENT.date} · {UPCOMING_EVENT.time} · {UPCOMING_EVENT.location}
@@ -25,10 +36,11 @@ export default function FeaturedWorkshops() {
             <span className="text-2xl font-bold text-brand-gold">₹{UPCOMING_EVENT.price}</span>
             <Link
               href="/workshops"
-              className="px-6 py-2 bg-brand-gold text-brand-black rounded-full text-sm font-semibold hover:bg-yellow-600 transition-colors"
+              className="ml-auto px-6 py-2 bg-brand-gold text-brand-black rounded-full text-sm font-semibold hover:bg-yellow-600 transition-colors"
             >
               Reserve Seat
             </Link>
+          </div>
           </div>
         </div>
 
@@ -38,20 +50,20 @@ export default function FeaturedWorkshops() {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6">
           {WORKSHOPS.map((workshop) => (
             <div 
               key={workshop.id} 
-              className="group bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)] transition-all duration-300 border border-brand-gold/20 flex flex-col transform-gpu hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-4deg)_translateY(-8px)]"
+              className="group bg-zinc-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)] transition-all duration-300 border border-brand-gold/20"
             >
-              <div className="relative h-64 w-full overflow-hidden">
+              <div className="relative h-72 md:h-80 w-full overflow-hidden">
                 <Image
                   src={workshop.image}
                   alt={workshop.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/68 via-black/35 to-black/12" />
                 {workshop.spotsLeft === 0 && (
                   <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                     <span className="bg-brand-white text-brand-black px-4 py-1 font-bold rounded-full uppercase tracking-wider text-sm">
@@ -64,46 +76,43 @@ export default function FeaturedWorkshops() {
                     Only {workshop.spotsLeft} seats left!
                   </div>
                 )}
-              </div>
-
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex justify-between items-start mb-4">
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-white mb-1 group-hover:text-brand-gold transition-colors">
+                    <h3 className="font-serif text-3xl md:text-4xl font-bold text-brand-gold mb-1 transition-colors">
                       {workshop.title}
                     </h3>
-                    <p className="text-sm text-gray-400 font-medium">{workshop.location}</p>
+                    <p className="text-sm text-gray-100 font-medium">{workshop.location}</p>
                   </div>
-                </div>
 
-                <div className="flex items-center gap-4 text-sm text-gray-300 mb-6 font-medium">
-                  <div className="flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    {workshop.date}
+                  <div className="flex items-center gap-4 text-sm text-gray-100 mt-4 mb-6 font-medium">
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                      {workshop.date}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      {workshop.time}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    {workshop.time}
-                  </div>
-                </div>
 
-                <div className="mt-auto flex items-center justify-between border-t border-brand-gold/15 pt-4">
-                  <span className="text-xl font-bold text-brand-gold">
-                    ₹{workshop.price}
-                  </span>
-                  
-                  {workshop.spotsLeft > 0 ? (
-                    <Link 
-                      href={`/workshops/${workshop.id}`}
-                      className="px-6 py-2 bg-brand-black text-brand-white rounded-full text-sm font-semibold hover:bg-brand-gold hover:text-brand-black transition-colors"
-                    >
-                      Book Now
-                    </Link>
-                  ) : (
-                    <button disabled className="px-6 py-2 bg-gray-200 text-gray-400 rounded-full text-sm font-semibold cursor-not-allowed">
-                      Full
-                    </button>
-                  )}
+                  <div className="mt-auto flex items-center justify-between border-t border-brand-gold/35 pt-4">
+                    <span className="text-xl font-bold text-brand-gold">
+                      ₹{workshop.price}
+                    </span>
+                    
+                    {workshop.spotsLeft > 0 ? (
+                      <Link 
+                        href={`/workshops/${workshop.id}`}
+                        className="ml-auto px-6 py-2 bg-brand-gold text-brand-black rounded-full text-sm font-semibold hover:bg-yellow-600 transition-colors"
+                      >
+                        Reserve Seat
+                      </Link>
+                    ) : (
+                      <button disabled className="px-6 py-2 bg-gray-200 text-gray-400 rounded-full text-sm font-semibold cursor-not-allowed">
+                        Full
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

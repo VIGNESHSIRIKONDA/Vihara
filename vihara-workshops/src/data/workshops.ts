@@ -51,6 +51,28 @@ export const WORKSHOPS: Workshop[] = [
     spotsLeft: 0,
     description: "Design and paint your own functional art tote bag and take it home the same day.",
   },
+  {
+    id: 4,
+    title: "Mandala Dot Art",
+    date: "Sun, Oct 29",
+    time: "10:30 AM - 1:30 PM",
+    location: "Conçu Café, Jubilee Hills",
+    price: 999,
+    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1887&auto=format&fit=crop",
+    spotsLeft: 6,
+    description: "Learn calming dot techniques and symmetry to create your own vibrant mandala artwork.",
+  },
+  {
+    id: 5,
+    title: "Coffee Painting Session",
+    date: "Sat, Nov 04",
+    time: "5:00 PM - 8:00 PM",
+    location: "Third Wave Coffee, Hitech City",
+    price: 899,
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1770&auto=format&fit=crop",
+    spotsLeft: 9,
+    description: "Paint beautiful monochrome art using coffee tones with step-by-step artist guidance.",
+  },
 ];
 
 export const PREVIOUS_HISTORY: PreviousHistoryEvent[] = [
