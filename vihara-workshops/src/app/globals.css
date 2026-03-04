@@ -142,3 +142,42 @@ html {
 .gold-shine {
   animation: goldSweep 2.2s ease-in-out infinite;
 }
+
+@keyframes moodSwap {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  20%,
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes scrollArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.hero-mood-swap {
+  min-width: 170px;
+  display: inline-block;
+  animation: moodSwap 2.2s ease;
+}
+
+.hero-scroll-arrow {
+  display: inline-block;
+  animation: scrollArrow 1.4s ease-in-out infinite;
+}

@@ -11,9 +11,9 @@ type WeekendActivity = {
 };
 
 const WEEKEND_ACTIVITIES: WeekendActivity[] = [
-  { title: "🎨 Resin Art", price: "₹999", image: "https://images.unsplash.com/photo-1578301978069-1c3adf265f47?q=80&w=1740&auto=format&fit=crop", vibe: "Glossy keepsakes" },
+  { title: "🎨 Resin Art", price: "₹999", image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1945&auto=format&fit=crop", vibe: "Glossy keepsakes" },
   { title: "🏺 Hand-Build Pottery", price: "₹899", image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1887&auto=format&fit=crop", vibe: "Clay & calm" },
-  { title: "👤 Clay Portrait Sculpture", price: "₹899", image: "https://images.unsplash.com/photo-1582041148887-67274b989593?q=80&w=1770&auto=format&fit=crop", vibe: "Faces in form" },
+  { title: "👤 Clay Portrait Sculpture", price: "₹899", image: "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=2070&auto=format&fit=crop", vibe: "Faces in form" },
   { title: "🔵 Mandala Art", price: "₹799", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1887&auto=format&fit=crop", vibe: "Mindful patterns" },
   { title: "🎨 Acrylic Painting", price: "₹799", image: "https://images.unsplash.com/photo-1501472312651-726afe119ff1?q=80&w=1887&auto=format&fit=crop", vibe: "Bold colors" },
   { title: "🎨 Gouache Painting", price: "₹799", image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1780&auto=format&fit=crop", vibe: "Soft matte textures" },
