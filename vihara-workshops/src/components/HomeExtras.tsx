@@ -2,6 +2,39 @@ import Link from "next/link";
 import CustomExperiences from "@/components/CustomExperiences";
 import WeekendWorkshopsShowcase from "@/components/WeekendWorkshopsShowcase";
 
+const SPECIAL_ITEMS = [
+  {
+    title: "3-Hour Guided Sessions",
+    description: "Structured, artist-led flow so you never feel lost.",
+    icon: "⏳",
+  },
+  {
+    title: "All Materials Included",
+    description: "Canvas, paints, tools, and setup are ready for you.",
+    icon: "🖌",
+  },
+  {
+    title: "Take Home Your Artwork",
+    description: "You leave with a finished piece you made yourself.",
+    icon: "🎁",
+  },
+  {
+    title: "Beginner Friendly",
+    description: "No prior experience needed. We guide every step.",
+    icon: "👩‍🎨",
+  },
+  {
+    title: "Hosted in Beautiful Cafés",
+    description: "Warm ambience, good coffee, and creative vibes.",
+    icon: "☕",
+  },
+  {
+    title: "Intimate Groups",
+    description: "Only 12–15 participants for personal attention.",
+    icon: "👥",
+  },
+];
+
 const FAQS = [
   {
     question: "Do I need prior experience?",
@@ -56,24 +89,53 @@ export default function HomeExtras() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10 reveal-up">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-brand-gold">What Makes Us Special</h2>
+            <p className="text-gray-300 mt-3">Not just a class — a complete creative experience.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              "✨ 3-Hour Guided Sessions",
-              "🖌 All Materials Included",
-              "🎁 Take Home Your Artwork",
-              "👩‍🎨 Beginner Friendly",
-              "☕ Hosted in Beautiful Cafés",
-              "👥 Intimate Groups (12–15 participants)",
-            ].map((item, index) => (
-              <div
-                key={item}
-                className="rounded-xl border border-brand-gold/30 bg-zinc-900 px-5 py-4 reveal-up"
-                style={{ animationDelay: `${index * 90}ms` }}
-              >
-                {item}
+
+          <div className="grid lg:grid-cols-12 gap-5">
+            <article className="lg:col-span-5 rounded-2xl border border-brand-gold/35 overflow-hidden relative min-h-[380px] reveal-up">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1887&auto=format&fit=crop')] bg-cover bg-center" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+              <div className="relative h-full p-6 md:p-8 flex flex-col justify-end">
+                <p className="text-brand-gold uppercase tracking-[0.2em] text-xs mb-2">Signature Vibe</p>
+                <h3 className="font-serif text-3xl md:text-4xl text-white">Art, Café & Calm</h3>
+                <p className="text-gray-200 mt-3 leading-relaxed">
+                  Every session blends artistic guidance, premium ambience, and small-group warmth.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full border border-brand-gold/60 text-brand-gold text-sm">3 Hours</span>
+                  <span className="px-3 py-1 rounded-full border border-brand-gold/60 text-brand-gold text-sm">12–15 Seats</span>
+                  <span className="px-3 py-1 rounded-full border border-brand-gold/60 text-brand-gold text-sm">All Materials</span>
+                </div>
               </div>
-            ))}
+            </article>
+
+            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+              {SPECIAL_ITEMS.map((item, index) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-brand-gold/25 bg-zinc-900/90 px-5 py-5 reveal-up transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(198,167,94,0.22)] hover:border-brand-gold/50"
+                  style={{ animationDelay: `${index * 90}ms` }}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/50 bg-brand-gold/10 text-lg">
+                      {item.icon}
+                    </div>
+                    <span className="font-serif text-brand-gold/60 text-3xl leading-none">0{index + 1}</span>
+                  </div>
+                  <h3 className="font-serif text-2xl text-brand-gold leading-tight mt-4">{item.title}</h3>
+                  <p className="text-gray-300 mt-2 leading-relaxed">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-xl border border-brand-gold/20 bg-zinc-900/70 overflow-hidden">
+            <div className="special-marquee-track py-3 text-sm text-brand-gold/90 tracking-wide whitespace-nowrap">
+              <span className="mx-4">✨ Guided · Curated · Aesthetic · Beginner-Friendly · Social · Premium</span>
+              <span className="mx-4">✨ Guided · Curated · Aesthetic · Beginner-Friendly · Social · Premium</span>
+              <span className="mx-4">✨ Guided · Curated · Aesthetic · Beginner-Friendly · Social · Premium</span>
+            </div>
           </div>
         </div>
       </section>

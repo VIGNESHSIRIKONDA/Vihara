@@ -181,3 +181,18 @@ html {
   display: inline-block;
   animation: scrollArrow 1.4s ease-in-out infinite;
 }
+
+@keyframes specialMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.special-marquee-track {
+  display: inline-block;
+  min-width: 200%;
+  animation: specialMarquee 20s linear infinite;
+}
